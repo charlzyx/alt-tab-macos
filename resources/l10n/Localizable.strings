@@ -622,3 +622,27 @@
 
 /* No comment provided by engineer. */
 "You may need to disable some conflicting system gestures" = "You may need to disable some conflicting system gestures";
+
+/* App Launcher */
+"App Launcher" = "App Launcher";
+
+/* No comment provided by engineer. */
+"App launcher" = "App launcher";
+
+/* No comment provided by engineer. */
+"Search applications" = "Search applications";
+
+/* No comment provided by engineer. */
+"Search installed applications" = "Search installed applications";
+
+/* No comment provided by engineer. */
+"Show system applications" = "Show system applications";
+
+/* No comment provided by engineer. */
+"Show system applications:" = "Show system applications:";
+
+/* No comment provided by engineer. */
+"Launch application" = "Launch application";
+
+/* No comment provided by engineer. */
+"No matching applications" = "No matching applications";
