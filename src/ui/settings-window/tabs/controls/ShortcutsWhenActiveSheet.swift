@@ -22,6 +22,8 @@ class ShortcutsWhenActiveSheet: SheetWindow {
             rightViews: [LabelAndControl.makeLabelWithRecorder(NSLocalizedString("Quit app", comment: ""), "quitAppShortcut", Preferences.quitAppShortcut, labelPosition: .right)[0]])
         let hideShowAppShortcut = TableGroupView.Row(leftTitle: NSLocalizedString("Hide/Show app", comment: ""),
             rightViews: [LabelAndControl.makeLabelWithRecorder(NSLocalizedString("Hide/Show app", comment: ""), "hideShowAppShortcut", Preferences.hideShowAppShortcut, labelPosition: .right)[0]])
+        let appLauncherShortcut = TableGroupView.Row(leftTitle: NSLocalizedString("App Launcher", comment: ""),
+            rightViews: [LabelAndControl.makeLabelWithRecorder(NSLocalizedString("App Launcher", comment: ""), "appLauncherShortcut", Preferences.appLauncherShortcut, labelPosition: .right)[0]])
         let table = TableGroupView(title: NSLocalizedString("Shortcuts When Active", comment: ""), width: SheetWindow.width)
         _ = table.addRow(focusWindowShortcut)
         _ = table.addRow(previousWindowShortcut)
@@ -33,6 +35,7 @@ class ShortcutsWhenActiveSheet: SheetWindow {
         _ = table.addRow(toggleFullscreenWindowShortcut)
         _ = table.addRow(quitAppShortcut)
         _ = table.addRow(hideShowAppShortcut)
+        _ = table.addRow(appLauncherShortcut)
         return table
     }
 }

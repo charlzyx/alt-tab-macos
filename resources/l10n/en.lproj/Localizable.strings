@@ -291,3 +291,13 @@
 "You can’t undo this action." = "You can’t undo this action.";
 "You didn’t write your email, thus can’t receive any response." = "You didn’t write your email, thus can’t receive any response.";
 "You may need to disable some conflicting system gestures" = "You may need to disable some conflicting system gestures";
+
+/* App Launcher */
+"App Launcher" = "App Launcher";
+"App launcher" = "App launcher";
+"Search applications" = "Search applications";
+"Search installed applications" = "Search installed applications";
+"Show system applications" = "Show system applications";
+"Show system applications:" = "Show system applications:";
+"Launch application" = "Launch application";
+"No matching applications" = "No matching applications";

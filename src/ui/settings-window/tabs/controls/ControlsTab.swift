@@ -140,6 +140,7 @@ class ControlsTab {
         "hideShowAppShortcut": { App.hideShowSelectedApp() },
         "searchShortcut": { App.toggleSearchMode() },
         "lockSearchShortcut": { App.lockSearchMode() },
+        "appLauncherShortcut": { ApplicationLauncher.toggle() },
     ]
     static var arrowKeysCheckbox: Switch!
     static var vimKeysCheckbox: Switch!
@@ -158,6 +159,7 @@ class ControlsTab {
     private static let staticManagedShortcutPreferences = [
         "focusWindowShortcut", "previousWindowShortcut", "cancelShortcut", "searchShortcut", "lockSearchShortcut",
         "closeWindowShortcut", "minDeminWindowShortcut", "toggleFullscreenWindowShortcut", "quitAppShortcut", "hideShowAppShortcut",
+        "appLauncherShortcut",
     ]
     private static let removableShortcutPreferences = [
         "holdShortcut", "nextWindowShortcut",

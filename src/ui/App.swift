@@ -123,6 +123,10 @@ class App: AppCenterApplication {
         TilesView.lockSearchMode()
     }
 
+    static func toggleAppLauncher() {
+        ApplicationLauncher.toggle()
+    }
+
     static func cancelSearchModeOrHideUi() {
         guard appIsBeingUsed else { return }
         if TilesView.isSearchModeOn {
@@ -366,6 +370,8 @@ class App: AppCenterApplication {
         MainMenu.loadFromXib()
         _ = TilesPanel()
         _ = PreviewPanel()
+        _ = AppLauncherPanel()
+        AppLauncherKeyboardHandler.initialize()
         Spaces.refresh()
         Screens.refresh()
         SpacesEvents.observe()

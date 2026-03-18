@@ -237,9 +237,47 @@ extension CGImage {
     }
 
     static func named(_ imageName: String) -> CGImage {
-        let imageURL = Bundle.main.url(forResource: imageName, withExtension: nil)!
-        let imageSource = CGImageSourceCreateWithURL(imageURL as CFURL, nil)!
-        return CGImageSourceCreateImageAtIndex(imageSource, 0, nil)!
+        if let imageURL = Bundle.main.url(forResource: imageName, withExtension: nil) {
+            let imageSource = CGImageSourceCreateWithURL(imageURL as CFURL, nil)!
+            return CGImageSourceCreateImageAtIndex(imageSource, 0, nil)!
+        }
+        // 如果找不到图片，返回黑色占位图
+        return CGImage.black()
+    }
+
+    static func black() -> CGImage {
+        let width = 32
+        let height = 32
+        let bytesPerPixel = 4
+        let bytesPerRow = width * bytesPerPixel
+        let pixelCount = width * height
+        let data = UnsafeMutablePointer<UInt8>.allocate(capacity: pixelCount * bytesPerPixel)
+
+        for i in 0..<pixelCount {
+            let baseIndex = i * bytesPerPixel
+            data[baseIndex] = 0       // B
+            data[baseIndex + 1] = 0   // G
+            data[baseIndex + 2] = 0   // R
+            data[baseIndex + 3] = 255 // A
+        }
+
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedFirst.rawValue | CGBitmapInfo.byteOrder32Little.rawValue)
+
+        let context = CGContext(
+            data: data,
+            width: width,
+            height: height,
+            bitsPerComponent: 8,
+            bytesPerRow: bytesPerRow,
+            space: colorSpace,
+            bitmapInfo: bitmapInfo.rawValue
+        )
+
+        let image = context!.makeImage()!
+        data.deallocate()
+
+        return image
     }
 
     func size() -> NSSize {

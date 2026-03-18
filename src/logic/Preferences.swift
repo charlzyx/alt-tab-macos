@@ -50,6 +50,8 @@ class Preferences {
             "screenRecordingPermissionSkipped": "false",
             "trackpadHapticFeedbackEnabled": "true",
             "settingsWindowShownOnFirstLaunch": "false",
+            "appLauncherShortcut": defaultShortcut("⌥␣"),
+            "showSystemApplicationsInLauncher": "false",
         ]
         (0..<maxShortcutCount).forEach { index in
             values[indexToName("holdShortcut", index)] = defaultShortcut("⌥")
@@ -74,6 +76,7 @@ class Preferences {
     static let staticShortcutKeys = [
         "focusWindowShortcut", "previousWindowShortcut", "cancelShortcut", "lockSearchShortcut", "closeWindowShortcut",
         "minDeminWindowShortcut", "toggleFullscreenWindowShortcut", "quitAppShortcut", "hideShowAppShortcut", "searchShortcut",
+        "appLauncherShortcut",
     ]
     static var allShortcutPreferenceKeys: [String] {
         staticShortcutKeys + (0..<maxShortcutCount).flatMap { [indexToName("holdShortcut", $0), indexToName("nextWindowShortcut", $0)] }
@@ -96,6 +99,8 @@ class Preferences {
     static var quitAppShortcut: Shortcut? { CachedUserDefaults.shortcut("quitAppShortcut") }
     static var hideShowAppShortcut: Shortcut? { CachedUserDefaults.shortcut("hideShowAppShortcut") }
     static var searchShortcut: Shortcut? { CachedUserDefaults.shortcut("searchShortcut") }
+    static var appLauncherShortcut: Shortcut? { CachedUserDefaults.shortcut("appLauncherShortcut") }
+    static var showSystemApplicationsInLauncher: Bool { CachedUserDefaults.bool("showSystemApplicationsInLauncher") }
     // periphery:ignore
     static var arrowKeysEnabled: Bool { CachedUserDefaults.bool("arrowKeysEnabled") }
     // periphery:ignore

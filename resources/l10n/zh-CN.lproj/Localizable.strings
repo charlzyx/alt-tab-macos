@@ -291,3 +291,13 @@
 "You can’t undo this action." = "您无法撤消此操作";
 "You didn’t write your email, thus can’t receive any response." = "您未填写电子邮箱地址，将无法收到回复。";
 "You may need to disable some conflicting system gestures" = "您可能需要禁用一些有冲突的系统手势";
+
+/* App Launcher */
+"App Launcher" = "应用启动器";
+"App launcher" = "应用启动器";
+"Search applications" = "搜索应用";
+"Search installed applications" = "搜索已安装的应用";
+"Show system applications" = "显示系统应用";
+"Show system applications:" = "显示系统应用：";
+"Launch application" = "启动应用";
+"No matching applications" = "没有匹配的应用";

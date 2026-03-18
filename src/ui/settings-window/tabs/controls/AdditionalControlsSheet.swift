@@ -12,6 +12,8 @@ class AdditionalControlsSheet: SheetWindow {
             rightViews: [LabelAndControl.makeDropdown("cursorFollowFocus", CursorFollowFocus.allCases)])
         let enableTrackpadHapticFeedback = TableGroupView.Row(leftTitle: NSLocalizedString("Trackpad haptic feedback", comment: ""),
             rightViews: [LabelAndControl.makeSwitch("trackpadHapticFeedbackEnabled")])
+        let showSystemApplications = TableGroupView.Row(leftTitle: NSLocalizedString("Show system applications", comment: "Show system applications in app launcher"),
+            rightViews: [LabelAndControl.makeSwitch("showSystemApplicationsInLauncher")])
         ControlsTab.arrowKeysCheckbox = enableArrows.rightViews[0] as? Switch
         ControlsTab.vimKeysCheckbox = enableVimKeys.rightViews[0] as? Switch
         ControlsTab.arrowKeysEnabledCallback(ControlsTab.arrowKeysCheckbox)
@@ -25,7 +27,10 @@ class AdditionalControlsSheet: SheetWindow {
             width: SheetWindow.width)
         _ = table2.addRow(enableCursorFollowFocus)
         _ = table2.addRow(enableTrackpadHapticFeedback)
-        let view = TableGroupSetView(originalViews: [table1, table2], padding: 0)
+        let table3 = TableGroupView(title: NSLocalizedString("App Launcher", comment: ""),
+            width: SheetWindow.width)
+        _ = table3.addRow(showSystemApplications)
+        let view = TableGroupSetView(originalViews: [table1, table2, table3], padding: 0)
         return view
     }
 }
